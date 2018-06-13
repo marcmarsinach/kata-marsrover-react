@@ -24,11 +24,18 @@ export default class Rover extends React.Component {
             if (command == 'R')
                 this.turnRight();
             else
-                this.state.direction = 'W';
-
+                this.turnLeft();
         });
 
         return '0,0,' + this.state.direction;
+    }
+
+
+    turnLeft() {
+        if (this.state.direction == 'N')
+            this.state.direction = 'W';
+        else
+            this.state.direction = 'S';
     }
 
 

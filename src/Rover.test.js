@@ -44,6 +44,7 @@ describe('Rover should', () => {
         expect(currentPosition).toEqual(expectedPosition);
     })
 
+    
     it('rotate_to_west_given_a_L_command', () => {
         let commands = 'L';
         let expectedPosition = '0,0,W';
@@ -52,6 +53,7 @@ describe('Rover should', () => {
         
         expect(currentPosition).toEqual(expectedPosition);
     })
+
 
     it('rotate_to_south_given_a_LL_command', () => {
         let commands = 'LL';
