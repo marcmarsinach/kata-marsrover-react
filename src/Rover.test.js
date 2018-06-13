@@ -43,4 +43,22 @@ describe('Rover should', () => {
         
         expect(currentPosition).toEqual(expectedPosition);
     })
+
+    it('rotate_to_west_given_a_L_command', () => {
+        let commands = 'L';
+        let expectedPosition = '0,0,W';
+
+        let currentPosition = new Rover().rotate(commands);
+        
+        expect(currentPosition).toEqual(expectedPosition);
+    })
+
+    it('rotate_to_south_given_a_LL_command', () => {
+        let commands = 'LL';
+        let expectedPosition = '0,0,S';
+
+        let currentPosition = new Rover().rotate(commands);
+        
+        expect(currentPosition).toEqual(expectedPosition);
+    })
 });

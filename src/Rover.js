@@ -17,17 +17,22 @@ export default class Rover extends React.Component {
 
 
     rotate(commands) {
-        let sCommands = commands.split('');
+        let commandsCollection = commands.split('');
 
-        sCommands.forEach(command => {
-            this.turnRight(command);
+        commandsCollection.forEach(command => {
+
+            if (command == 'R')
+                this.turnRight();
+            else
+                this.state.direction = 'W';
+
         });
 
         return '0,0,' + this.state.direction;
     }
 
 
-    turnRight(command) {
+    turnRight() {
         if (this.state.direction == 'N')
             this.state.direction = 'E';
         else if (this.state.direction == 'E')
